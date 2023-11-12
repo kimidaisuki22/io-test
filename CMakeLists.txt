@@ -7,7 +7,8 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(main src/main.cpp)
 
 find_package(fmt CONFIG REQUIRED)
-target_link_libraries(main PRIVATE fmt::fmt)
+find_package(cy CONFIG REQUIRED)
+target_link_libraries(main PRIVATE fmt::fmt cy::cy)
 
 target_include_directories(main PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
