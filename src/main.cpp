@@ -39,7 +39,7 @@ int main(int argc, char **argv) {
                 << " size: " << cy::text::to_number_unit_SI(w) << "\n";
     }
   }};
-  std::array<char, 4 * 1024> buffer;
+  static std::array<char, 1024 * 1024> buffer;
   std::fill(buffer.begin(), buffer.end(), '1');
   {
     std::ofstream file{filename, std::ios::binary};
